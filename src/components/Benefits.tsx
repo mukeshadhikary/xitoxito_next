@@ -75,8 +75,10 @@ const BENEFITS = [
   },
 ];
 
+import type { CarouselApi } from "@/components/ui/carousel";
+
 export default function Benefits() {
-  const [api, setApi] = useState<any>();
+  const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -99,42 +101,42 @@ export default function Benefits() {
   }, [api]);
 
   return (
-    <section id="benefits" className="py-24 bg-slate-50 dark:bg-slate-950">
+    <section id="benefits" className="py-24 bg-slate-50 dark:bg-slate-950 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 border-gray-200 bg-white dark:border-slate-700 dark:bg-slate-900">
+        <div className="text-center mb-12 sm:mb-16">
+          <Badge variant="outline" className="mb-4 border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900">
             Why {siteConfig.name}?
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-slate-800 dark:text-white">
               {siteConfig.benefits.title}
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400">किन {siteConfig.name} छान्नुहोस्?</p>
+          <p className="text-lg sm:text-xl text-slate-600 dark:text-gray-400">किन {siteConfig.name} छान्नुहोस्?</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Benefits Cards */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold mb-8 text-gray-900 dark:text-white">Perfect for Your Business</h3>
+          <div className="space-y-4 sm:space-y-6">
+            <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-slate-800 dark:text-white">Perfect for Your Business</h3>
             {BENEFITS.map((benefit, index) => {
               const Icon = benefit.icon;
               return (
                 <Card
                   key={index}
-                  className="group overflow-hidden border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 bg-white dark:bg-slate-900 dark:border-slate-800"
+                  className="group overflow-hidden border border-slate-200/60 shadow-md hover:shadow-xl transition-all duration-300 bg-white dark:bg-slate-900 dark:border-slate-800"
                 >
-                  <CardContent className="p-6 flex items-start gap-4">
+                  <CardContent className="p-4 sm:p-6 flex items-start gap-3 sm:gap-4">
                     <div
-                      className={`w-12 h-12 rounded-xl bg-linear-to-br ${benefit.color} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}
+                      className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-linear-to-br ${benefit.color} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}
                     >
-                      <Icon className="w-6 h-6 text-white" />
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1 text-gray-900 dark:text-white">{benefit.title}</h4>
+                      <h4 className="font-bold text-lg mb-1 text-slate-800 dark:text-white">{benefit.title}</h4>
                       <p className="text-sm text-blue-600 dark:text-blue-400 mb-2">{benefit.titleNp}</p>
-                      <p className="text-gray-600 dark:text-gray-400 text-sm">{benefit.description}</p>
+                      <p className="text-slate-600 dark:text-gray-400 text-sm">{benefit.description}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -143,22 +145,22 @@ export default function Benefits() {
           </div>
 
           {/* Testimonials Carousel */}
-          <div className="relative">
-            <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl" />
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl" />
+          <div className="relative mt-8 lg:mt-0">
+            <div className="absolute -top-4 -left-4 w-24 h-24 bg-slate-400/20 dark:bg-blue-500/10 rounded-full blur-2xl" />
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-slate-300/30 dark:bg-cyan-500/10 rounded-full blur-2xl" />
 
-            <Card className="relative bg-linear-to-br from-slate-900 to-slate-800 dark:from-slate-950 dark:to-slate-900 border-0 shadow-2xl overflow-hidden">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-2 mb-6">
-                  <Quote className="w-8 h-8 text-blue-400" />
-                  <h3 className="text-2xl font-bold text-white">Success Stories</h3>
+            <Card className="relative bg-white dark:bg-linear-to-br dark:from-slate-950 dark:to-slate-900 border border-slate-200 dark:border-0 shadow-2xl overflow-hidden">
+              <CardContent className="p-4 sm:p-6 lg:p-8">
+                <div className="flex items-center gap-2 mb-4 sm:mb-6">
+                  <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-slate-600 dark:text-blue-400" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white">Success Stories</h3>
                 </div>
 
                 <Carousel setApi={setApi} className="w-full" opts={{ loop: true }}>
                   <CarouselContent>
                     {TESTIMONIALS.map((testimonial, index) => (
                       <CarouselItem key={index}>
-                        <div className="space-y-6">
+                        <div className="space-y-4 sm:space-y-6">
                           {/* Rating */}
                           <div className="flex gap-1">
                             {[...Array(5)].map((_, i) => (
@@ -170,25 +172,25 @@ export default function Benefits() {
                           </div>
 
                           {/* Quote */}
-                          <blockquote className="text-lg text-white/90 leading-relaxed">
+                          <blockquote className="text-base sm:text-lg text-slate-700 dark:text-white/90 leading-relaxed">
                             &quot;{testimonial.text}&quot;
                           </blockquote>
-                          <p className="text-sm text-blue-300/80">
+                          <p className="text-xs sm:text-sm text-slate-500 dark:text-blue-300/80">
                             &quot;{testimonial.textNp}&quot;
                           </p>
 
                           {/* Author */}
-                          <div className="flex items-center gap-4 pt-4 border-t border-white/10">
-                            <Avatar className="w-12 h-12 border-2 border-blue-400">
-                              <AvatarFallback className="bg-linear-to-br from-blue-500 to-cyan-500 text-white font-bold">
+                          <div className="flex items-center gap-3 sm:gap-4 pt-4 border-t border-slate-200 dark:border-white/10">
+                            <Avatar className="w-10 h-10 sm:w-12 sm:h-12 border-2 border-slate-300 dark:border-blue-400">
+                              <AvatarFallback className="bg-linear-to-br from-slate-600 to-slate-700 dark:from-blue-500 dark:to-cyan-500 text-white font-bold text-sm sm:text-base">
                                 {testimonial.initials}
                               </AvatarFallback>
                             </Avatar>
                             <div>
-                              <p className="font-semibold text-white">
+                              <p className="font-semibold text-slate-800 dark:text-white text-sm sm:text-base">
                                 {testimonial.name}
                               </p>
-                              <p className="text-sm text-blue-300/70">
+                              <p className="text-xs sm:text-sm text-slate-500 dark:text-blue-300/70">
                                 {testimonial.business}
                               </p>
                             </div>
@@ -205,15 +207,15 @@ export default function Benefits() {
                           onClick={() => api?.scrollTo(index)}
                           className={`w-2 h-2 rounded-full transition-all ${
                             index === current
-                              ? "bg-blue-400 w-6"
-                              : "bg-white/30 hover:bg-white/50"
+                              ? "bg-slate-600 dark:bg-blue-400 w-6"
+                              : "bg-slate-300 hover:bg-slate-400 dark:bg-white/30 dark:hover:bg-white/50"
                           }`}
                         />
                       ))}
                     </div>
                     <div className="flex gap-2">
-                      <CarouselPrevious className="static translate-y-0 bg-white/10 border-white/20 text-white hover:bg-white/20" />
-                      <CarouselNext className="static translate-y-0 bg-white/10 border-white/20 text-white hover:bg-white/20" />
+                      <CarouselPrevious className="static translate-y-0 bg-slate-100 border-slate-300 text-slate-700 hover:bg-slate-200 dark:bg-white/10 dark:border-white/20 dark:text-white dark:hover:bg-white/20" />
+                      <CarouselNext className="static translate-y-0 bg-slate-100 border-slate-300 text-slate-700 hover:bg-slate-200 dark:bg-white/10 dark:border-white/20 dark:text-white dark:hover:bg-white/20" />
                     </div>
                   </div>
                 </Carousel>

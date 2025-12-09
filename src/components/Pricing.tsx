@@ -73,20 +73,20 @@ export default function Pricing({ onScrollToSection }: PricingProps) {
   const { pricing, translations } = siteConfig;
   
   return (
-    <section id="pricing" className="py-24 bg-slate-50 dark:bg-slate-950">
+    <section id="pricing" className="py-24 bg-slate-100 dark:bg-slate-950 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 border-gray-200 bg-white dark:border-slate-700 dark:bg-slate-900">
+        <div className="text-center mb-12 sm:mb-16">
+          <Badge variant="outline" className="mb-4 border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900">
             Pricing
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-slate-800 dark:text-white">
               {pricing.title}
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400">{translations.pricing.subtitle}</p>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mt-2">
+          <p className="text-lg sm:text-xl text-slate-600 dark:text-gray-400">{translations.pricing.subtitle}</p>
+          <p className="text-lg text-slate-500 dark:text-gray-400 mt-2">
             {pricing.subtitle}
           </p>
         </div>
@@ -101,7 +101,7 @@ export default function Pricing({ onScrollToSection }: PricingProps) {
                 className={`relative overflow-hidden transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-slate-900 ${
                   plan.popular
                     ? "border-2 border-blue-500 shadow-2xl shadow-blue-500/20 scale-105 z-10"
-                    : "border border-gray-100 dark:border-slate-800 shadow-lg hover:shadow-xl"
+                    : "border border-slate-200/60 dark:border-slate-800 shadow-lg hover:shadow-xl"
                 }`}
               >
                 {plan.popular && (
@@ -118,34 +118,34 @@ export default function Pricing({ onScrollToSection }: PricingProps) {
                       className={`w-12 h-12 rounded-xl flex items-center justify-center ${
                         plan.popular
                           ? "bg-linear-to-br from-blue-500 to-cyan-500"
-                          : "bg-gray-100 dark:bg-slate-800"
+                          : "bg-slate-200 dark:bg-slate-800"
                       }`}
                     >
                       <Icon
                         className={`w-6 h-6 ${
-                          plan.popular ? "text-white" : "text-gray-600 dark:text-gray-400"
+                          plan.popular ? "text-white" : "text-slate-600 dark:text-gray-400"
                         }`}
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{plan.name}</h3>
+                      <h3 className="text-2xl font-bold text-slate-800 dark:text-white">{plan.name}</h3>
                       <p className="text-sm text-blue-600 dark:text-blue-400">{plan.nameNp}</p>
                     </div>
                   </div>
 
                   <div className="space-y-1">
                     <div className="flex items-baseline gap-1">
-                      <span className="text-4xl font-bold text-gray-900 dark:text-white">{plan.price}</span>
+                      <span className="text-4xl font-bold text-slate-800 dark:text-white">{plan.price}</span>
                     </div>
-                    <p className="text-lg text-gray-600 dark:text-gray-400">{plan.priceNpr}</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{plan.description}</p>
+                    <p className="text-lg text-slate-600 dark:text-gray-400">{plan.priceNpr}</p>
+                    <p className="text-sm text-slate-500 dark:text-gray-400">{plan.description}</p>
                   </div>
                 </CardHeader>
 
                 <Separator />
 
                 <CardContent className="pt-6">
-                  <p className="text-sm font-medium mb-4 text-gray-900 dark:text-white">What&apos;s included:</p>
+                  <p className="text-sm font-medium mb-4 text-slate-800 dark:text-white">What&apos;s included:</p>
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
@@ -154,7 +154,7 @@ export default function Pricing({ onScrollToSection }: PricingProps) {
                             plan.popular ? "text-blue-500" : "text-green-500"
                           }`}
                         />
-                        <span className="text-sm text-gray-600 dark:text-gray-400">{feature}</span>
+                        <span className="text-sm text-slate-600 dark:text-gray-400">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -179,9 +179,9 @@ export default function Pricing({ onScrollToSection }: PricingProps) {
 
         {/* CTA */}
         <div className="mt-16 text-center">
-          <Card className="inline-block border-0 bg-gray-100 dark:bg-slate-800 shadow-none">
+          <Card className="inline-block border-0 bg-slate-200/60 dark:bg-slate-800 shadow-none">
             <CardContent className="py-6 px-8 flex flex-col sm:flex-row items-center gap-4">
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-slate-600 dark:text-gray-400">
                 Not sure which plan is right for you?
               </p>
               <Button

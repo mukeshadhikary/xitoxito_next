@@ -86,20 +86,20 @@ export default function Features() {
   const { features, translations } = siteConfig;
   
   return (
-    <section id="features" className="py-24 bg-white dark:bg-slate-950">
+    <section id="features" className="py-24 bg-slate-100 dark:bg-slate-950 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 border-gray-200 bg-white dark:border-slate-700 dark:bg-slate-900">
+        <div className="text-center mb-12 sm:mb-16">
+          <Badge variant="outline" className="mb-4 border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900">
             Features
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-slate-800 dark:text-white">
               {features.title}
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400">{translations.features.subtitle}</p>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mt-2 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-slate-600 dark:text-gray-400">{translations.features.subtitle}</p>
+          <p className="text-lg text-slate-500 dark:text-gray-400 mt-2 max-w-2xl mx-auto">
             {features.subtitle}
           </p>
         </div>
@@ -111,9 +111,9 @@ export default function Features() {
             return (
               <Card
                 key={index}
-                className="group relative overflow-hidden border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white dark:bg-slate-900 dark:border-slate-800"
+                className="group relative overflow-hidden border border-slate-200/60 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white dark:bg-slate-900 dark:border-slate-800"
               >
-                <div className="absolute inset-0 bg-linear-to-br from-transparent to-slate-100/50 dark:to-slate-800/50 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-linear-to-br from-transparent to-slate-200/30 dark:to-slate-800/50 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <CardContent className="p-6 relative">
                   <div
                     className={`w-14 h-14 rounded-2xl ${feature.bgColor} dark:bg-opacity-20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
@@ -122,11 +122,11 @@ export default function Features() {
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{feature.title}</h3>
+                  <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-white">{feature.title}</h3>
                   <p className="text-sm text-blue-600 dark:text-blue-400 mb-3 font-medium">
                     {feature.titleNp}
                   </p>
-                  <p className="text-gray-600 dark:text-gray-400">{feature.description}</p>
+                  <p className="text-slate-600 dark:text-gray-400">{feature.description}</p>
                 </CardContent>
               </Card>
             );
@@ -134,11 +134,11 @@ export default function Features() {
         </div>
 
         {/* Feature Categories Tabs */}
-        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-800 shadow-lg p-8">
+        <div className="bg-slate-100/80 dark:bg-slate-900 rounded-2xl border border-slate-200/60 dark:border-slate-800 shadow-lg p-8">
           <Tabs defaultValue="store" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 mb-8 bg-gray-100 dark:bg-slate-800">
+            <TabsList className="grid w-full grid-cols-3 mb-8 bg-slate-200/60 dark:bg-slate-800">
               {FEATURE_CATEGORIES.map((cat) => (
-                <TabsTrigger key={cat.id} value={cat.id} className="text-sm md:text-base data-[state=active]:bg-white dark:data-[state=active]:bg-slate-700">
+                <TabsTrigger key={cat.id} value={cat.id} className="text-sm md:text-base data-[state=active]:bg-slate-50 dark:data-[state=active]:bg-slate-700">
                   {cat.label}
                 </TabsTrigger>
               ))}
@@ -149,9 +149,9 @@ export default function Features() {
                   {cat.features.map((feat, idx) => (
                     <div
                       key={idx}
-                      className="p-4 rounded-xl bg-gray-50 dark:bg-slate-800 text-center hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors"
+                      className="p-4 rounded-xl bg-slate-200/50 dark:bg-slate-800 text-center hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
                     >
-                      <span className="font-medium text-gray-900 dark:text-white">{feat}</span>
+                      <span className="font-medium text-slate-800 dark:text-white">{feat}</span>
                     </div>
                   ))}
                 </div>

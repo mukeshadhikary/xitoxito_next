@@ -13,7 +13,7 @@ import {
 import { siteConfig } from "@/config/site.config";
 
 export function ThemeToggle() {
-  const { setTheme, theme, resolvedTheme } = useTheme();
+  const { setTheme, theme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
   // Prevent hydration mismatch

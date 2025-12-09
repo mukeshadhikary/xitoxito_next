@@ -2,7 +2,15 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/config/site.config";
+import { 
+  generateHomePageSchemas, 
+  generateFAQSchema, 
+  defaultFAQs,
+  SITE_URL,
+  getCanonicalUrl 
+} from "@/lib/seo";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,11 +37,40 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: siteConfig.seo.title,
+  // Basic Meta
+  title: {
+    default: siteConfig.seo.title,
+    template: siteConfig.seo.titleTemplate,
+  },
   description: siteConfig.seo.description,
-  keywords: siteConfig.seo.keywords,
-  authors: [{ name: siteConfig.footer.developer.name }],
+  keywords: [...siteConfig.seo.keywords],
+  authors: [{ name: siteConfig.footer.developer.name, url: siteConfig.footer.developer.url }],
   creator: siteConfig.footer.developer.name,
+  publisher: siteConfig.name,
+  
+  // Canonical URL
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en": "/",
+      "ne": "/ne",
+    },
+  },
+  
+  // Robots
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   
   // PWA / Mobile optimizations
   appleWebApp: {
@@ -57,6 +94,16 @@ export const metadata: Metadata = {
     siteName: siteConfig.seo.openGraph.siteName,
     title: siteConfig.seo.title,
     description: siteConfig.seo.description,
+    url: SITE_URL,
+    images: [
+      {
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} - E-Commerce Software Solution`,
+        type: "image/png",
+      },
+    ],
   },
   
   // Twitter
@@ -65,15 +112,43 @@ export const metadata: Metadata = {
     title: siteConfig.seo.title,
     description: siteConfig.seo.description,
     creator: siteConfig.seo.twitter.creator,
+    site: siteConfig.seo.twitter.creator,
+    images: [`${SITE_URL}/og-image.png`],
   },
+  
+  // Verification (add your actual verification codes)
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || "",
+    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || "",
+    // bing: process.env.NEXT_PUBLIC_BING_VERIFICATION || "",
+  },
+  
+  // Icons
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icons/icon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/icon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [
+      { url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      { rel: "mask-icon", url: "/icons/safari-pinned-tab.svg", color: "#3b82f6" },
+    ],
+  },
+  
+  // Category
+  category: "technology",
   
   // Additional meta
   other: {
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-capable": "yes",
-    "apple-touch-fullscreen": "yes",
     "HandheldFriendly": "true",
     "MobileOptimized": "width",
+    "msapplication-TileColor": "#3b82f6",
+    "msapplication-config": "/browserconfig.xml",
   },
 };
 
@@ -82,28 +157,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Generate all JSON-LD schemas for SEO
+  const schemas = [
+    ...generateHomePageSchemas(),
+    generateFAQSchema(defaultFAQs),
+  ];
+
   return (
     <html lang={siteConfig.locale.default} suppressHydrationWarning>
       <head>
-        {/* Prevent text size adjustment on orientation change */}
-        <style>{`
-          html {
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
-            text-size-adjust: 100%;
-          }
-          /* Prevent pull-to-refresh on mobile */
-          body {
-            overscroll-behavior-y: ${siteConfig.mobile.pullToRefresh ? 'auto' : 'contain'};
-          }
-          /* Safe area insets for notched devices */
-          :root {
-            --safe-area-inset-top: env(safe-area-inset-top);
-            --safe-area-inset-right: env(safe-area-inset-right);
-            --safe-area-inset-bottom: env(safe-area-inset-bottom);
-            --safe-area-inset-left: env(safe-area-inset-left);
-          }
-        `}</style>
+        {/* JSON-LD Structured Data for Rich Snippets */}
+        <JsonLd data={schemas} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}

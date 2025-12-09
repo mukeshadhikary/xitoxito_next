@@ -48,18 +48,18 @@ export default function Navbar({ onScrollToSection }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2 group cursor-pointer">
+          <div className="flex items-center space-x-2 group cursor-pointer shrink-0">
             <div className="relative">
               <div className="absolute -inset-1 bg-linear-to-r from-blue-600 to-cyan-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-300" />
-              <div className="relative bg-background rounded-lg p-2">
-                <ShoppingCart className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+              <div className="relative bg-background rounded-lg p-1.5 sm:p-2">
+                <ShoppingCart className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-400" />
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+              <span className="text-lg sm:text-xl font-bold bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
                 {siteConfig.name}
               </span>
-              <span className="text-[10px] text-muted-foreground -mt-1">
+              <span className="text-[9px] sm:text-[10px] text-muted-foreground -mt-1 hidden xs:block">
                 {siteConfig.tagline}
               </span>
             </div>

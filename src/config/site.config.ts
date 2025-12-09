@@ -16,15 +16,15 @@ export const siteConfig = {
   // ============================================
   // SITE IDENTITY & BRANDING
   // ============================================
-  name: "Xito",
-  tagline: "E-Commerce Platform",
-  description: "Complete e-commerce solution for secondhand stores, small brands, and Nepali businesses in Japan & Nepal. Built with Next.js & Strapi.",
+  name: "XitoXito",
+  tagline: "E-Commerce Software Solution",
+  description: "We build and sell complete e-commerce solutions - both frontend store and backend admin panel. Perfect for businesses who want their own online store without the hassle of development.",
   
   // Logo configuration
   logo: {
     icon: "ShoppingCart", // Lucide icon name
     showText: true,
-    text: "Xito",
+    text: "x",
   },
 
   // ============================================
@@ -38,19 +38,19 @@ export const siteConfig = {
   // Nepali/Hindi translations for display
   translations: {
     hero: {
-      subtitle: "तपाईंको अनलाइन स्टोर सजिलै बनाउनुहोस्",
+      subtitle: "आफ्नै अनलाइन स्टोर किन्नुहोस्",
     },
     features: {
-      subtitle: "विशेषताहरू",
+      subtitle: "के के पाउनुहुन्छ",
     },
     pricing: {
-      subtitle: "मूल्य निर्धारण",
+      subtitle: "मूल्य सूची",
     },
     contact: {
-      subtitle: "सम्पर्क",
+      subtitle: "अहिले नै किन्नुहोस्",
     },
     demo: {
-      subtitle: "कार्यमा हेर्नुहोस्",
+      subtitle: "हेर्नुहोस् के किन्दै हुनुहुन्छ",
     },
   },
 
@@ -82,9 +82,9 @@ export const siteConfig = {
   // SEO & META
   // ============================================
   seo: {
-    title: "Xito E-Commerce System | Online Store Solution",
-    titleTemplate: "%s | Xito",
-    description: "Complete e-commerce solution for secondhand stores, small brands, and Nepali businesses in Japan & Nepal. Built with Next.js & Strapi.",
+    title: "XitoXito | Buy Your Own E-Commerce Store - Complete Online Store Solution",
+    titleTemplate: "%s | XitoXito",
+    description: "Get your own complete e-commerce store with frontend website and backend admin panel. We sell ready-to-use online store software for businesses. No coding needed!",
     keywords: [
       "ecommerce",
       "online store",
@@ -149,13 +149,13 @@ export const siteConfig = {
   // ============================================
   navigation: {
     items: [
-      { label: "Features", sectionId: "features" },
-      { label: "Benefits", sectionId: "benefits" },
+      { label: "What You Get", sectionId: "features" },
+      { label: "Why Us", sectionId: "benefits" },
       { label: "Pricing", sectionId: "pricing" },
       { label: "Demo", sectionId: "demo" },
     ],
     cta: {
-      label: "Get Started",
+      label: "Buy Now",
       sectionId: "contact",
     },
   },
@@ -165,22 +165,22 @@ export const siteConfig = {
   // ============================================
   hero: {
     title: {
-      line1: "Launch Your",
-      line2: "Online Store",
-      line3: "in Minutes",
+      line1: "Get Your Own",
+      line2: "E-Commerce Store",
+      line3: "Ready to Sell",
     },
-    description: "Complete e-commerce solution designed for small businesses. Start selling online with a professional store that's easy to manage.",
+    description: "We sell complete e-commerce solutions - your own online store with a beautiful frontend website and powerful backend admin panel. No development needed, just buy and start selling!",
     
     // Stats displayed in hero
     stats: [
-      { value: "500+", label: "Stores Created" },
-      { value: "10K+", label: "Products Sold" },
-      { value: "99.9%", label: "Uptime" },
+      { value: "50+", label: "Stores Sold" },
+      { value: "100%", label: "Owned by You" },
+      { value: "24/7", label: "Support" },
     ],
     
     // CTA buttons
     primaryCta: {
-      label: "Start Free Trial",
+      label: "Get Your Store",
       sectionId: "pricing",
     },
     secondaryCta: {
@@ -191,10 +191,10 @@ export const siteConfig = {
     
     // Feature highlights in hero card
     highlights: [
-      "No coding required",
-      "Free SSL certificate",
-      "24/7 Support",
-      "Mobile optimized",
+      "Complete frontend store",
+      "Admin panel included",
+      "Full ownership - it's yours",
+      "No monthly fees",
     ],
   },
 
@@ -202,8 +202,8 @@ export const siteConfig = {
   // FEATURES SECTION
   // ============================================
   features: {
-    title: "Everything You Need",
-    subtitle: "Powerful features to run your online business",
+    title: "What You Get",
+    subtitle: "Complete e-commerce software package - frontend store + backend admin",
     
     // Feature categories for tabs
     categories: [
@@ -263,8 +263,8 @@ export const siteConfig = {
   // BENEFITS SECTION
   // ============================================
   benefits: {
-    title: "Why Choose Us",
-    subtitle: "Trusted by businesses across Nepal and Japan",
+    title: "Why Buy From Us",
+    subtitle: "Get your own e-commerce store, fully owned by you",
     
     items: [
       {
@@ -323,8 +323,8 @@ export const siteConfig = {
   // PRICING SECTION
   // ============================================
   pricing: {
-    title: "Simple, Transparent Pricing",
-    subtitle: "No hidden fees. Cancel anytime.",
+    title: "Buy Your E-Commerce Store",
+    subtitle: "One-time purchase. No monthly fees. 100% yours.",
     currency: "NPR",
     currencySymbol: "रू",
     
@@ -388,33 +388,33 @@ export const siteConfig = {
   // DEMO SECTION
   // ============================================
   demo: {
-    title: "See It In Action",
-    description: "Experience the power of Xito firsthand",
+    title: "See What You're Buying",
+    description: "Try our e-commerce software before you buy - both the store frontend and admin panel",
     
     features: [
       "Full product catalog",
       "Shopping cart & checkout",
       "User authentication",
       "Order management",
-      "Payment integration",
+      "Admin dashboard",
       "Mobile responsive",
     ],
     
     cards: [
       {
-        title: "Live Demo Store",
-        description: "Explore a fully functional e-commerce store. Browse products, add to cart, and experience the complete customer journey.",
+        title: "Frontend Store Demo",
+        description: "See how your online store will look. This is the customer-facing website where your buyers will shop.",
         icon: "Monitor",
         href: "https://xito.xitoxito.com",
-        badge: "Live",
+        badge: "Live Store",
         badgeColor: "green",
       },
       {
-        title: "Admin Panel Demo",
-        description: "Experience the powerful dashboard. Manage products, track orders, and view analytics all in one place.",
+        title: "Backend Admin Panel",
+        description: "This is where you'll manage your store - add products, process orders, view reports, and more.",
         icon: "Settings",
         href: "https://api.xitoxito.com",
-        badge: "Admin Access",
+        badge: "Admin Panel",
         badgeColor: "purple",
       },
     ],
@@ -424,9 +424,9 @@ export const siteConfig = {
   // CONTACT SECTION
   // ============================================
   contactSection: {
-    title: "Get In Touch",
-    subtitle: "Ready to start your e-commerce journey?",
-    description: "Have questions? Our team is here to help you get started.",
+    title: "Ready to Buy?",
+    subtitle: "Get your own e-commerce store today",
+    description: "Have questions about our e-commerce software? Want to discuss customization? Let's talk!",
     
     // Form fields configuration
     form: {
@@ -512,8 +512,8 @@ export const siteConfig = {
     
     // Developer credit
     developer: {
-      name: "Mukesh Thapa",
-      url: "#",
+      name: "Mukesh Adhykari",
+      url: "www.mukesh.adhykari.com",
     },
     
     copyright: "© {year} {siteName}. All rights reserved.",

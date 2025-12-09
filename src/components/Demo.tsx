@@ -8,37 +8,37 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { siteConfig } from "@/config/site.config";
 
 export default function Demo() {
-  const { demo, translations, links, name } = siteConfig;
+  const { demo, translations, links } = siteConfig;
   
   return (
-    <section id="demo" className="py-24 bg-linear-to-b from-slate-50 via-white to-blue-50/30 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 relative overflow-hidden">
+    <section id="demo" className="py-24 bg-slate-100 dark:bg-slate-950 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50 dark:opacity-20" />
       
-      {/* Floating elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200/20 dark:bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-200/20 dark:bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      {/* Floating elements - subtle slate for light mode */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-slate-300/30 dark:bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-slate-400/20 dark:bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header */}
-        <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 px-4 py-1.5 text-sm font-medium bg-white dark:bg-slate-900 border-gray-200 dark:border-slate-700">
+        <div className="text-center mb-12 sm:mb-16">
+          <Badge variant="outline" className="mb-4 px-4 py-1.5 text-sm font-medium bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700">
             <Play className="w-3.5 h-3.5 mr-1.5 text-blue-600 dark:text-blue-400" />
             Interactive Demo
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-linear-to-r from-gray-900 via-blue-800 to-gray-900 dark:from-white dark:via-blue-300 dark:to-white bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-slate-800 dark:text-white">
               {demo.title}
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-2">{demo.description}</p>
+          <p className="text-lg sm:text-xl text-slate-600 dark:text-gray-300 mb-2">{demo.description}</p>
           <p className="text-lg text-blue-600 dark:text-blue-400 font-medium">{translations.demo.subtitle}</p>
         </div>
 
         {/* Demo cards */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Live Demo Store Card */}
-          <Card className="group relative overflow-hidden border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white dark:bg-slate-900 dark:border-slate-800">
+          <Card className="group relative overflow-hidden border border-slate-200 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white dark:bg-slate-900 dark:border-slate-800">
             <div className="absolute inset-0 bg-linear-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-blue-400/10 to-transparent rounded-bl-full" />
             
@@ -49,12 +49,12 @@ export default function Demo() {
                 </div>
                 <Badge className="bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 border-green-200 dark:border-green-800">
                   <span className="w-2 h-2 bg-green-500 rounded-full mr-1.5 animate-pulse" />
-                  Live
+                  Customer View
                 </Badge>
               </div>
-              <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">Live Demo Store</CardTitle>
-              <CardDescription className="text-base text-gray-600 dark:text-gray-300">
-                Explore a fully functional e-commerce store. Browse products, add to cart, and experience the complete customer journey.
+              <CardTitle className="text-2xl font-bold text-slate-800 dark:text-white">Frontend Store</CardTitle>
+              <CardDescription className="text-base text-slate-600 dark:text-gray-300">
+                This is your customer-facing online store. See how your buyers will browse products, add to cart, and checkout.
               </CardDescription>
             </CardHeader>
             
@@ -73,12 +73,12 @@ export default function Demo() {
                 
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button variant="outline" size="lg" className="border-blue-200 dark:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-900/50 dark:text-white">
+                    <Button variant="outline" size="lg" className="border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:text-white dark:hover:bg-slate-800">
                       <Play className="w-4 h-4 mr-2" />
                       Watch Tour
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="sm:max-w-2xl bg-white dark:bg-slate-900">
+                  <DialogContent className="sm:max-w-2xl bg-slate-50 dark:bg-slate-900">
                     <DialogHeader>
                       <DialogTitle className="text-gray-900 dark:text-white">Store Demo Tour</DialogTitle>
                       <DialogDescription className="text-gray-600 dark:text-gray-400">
@@ -98,7 +98,7 @@ export default function Demo() {
           </Card>
 
           {/* Admin Panel Card */}
-          <Card className="group relative overflow-hidden border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white dark:bg-slate-900 dark:border-slate-800">
+          <Card className="group relative overflow-hidden border border-slate-200/60 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white dark:bg-slate-900 dark:border-slate-800">
             <div className="absolute inset-0 bg-linear-to-br from-gray-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-gray-400/10 to-transparent rounded-bl-full" />
             
@@ -109,12 +109,12 @@ export default function Demo() {
                 </div>
                 <Badge variant="secondary" className="bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800">
                   <Sparkles className="w-3 h-3 mr-1" />
-                  Admin Access
+                  Your Dashboard
                 </Badge>
               </div>
-              <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">Admin Panel Demo</CardTitle>
-              <CardDescription className="text-base text-gray-600 dark:text-gray-300">
-                Experience the powerful dashboard. Manage products, track orders, and view analytics all in one place.
+              <CardTitle className="text-2xl font-bold text-slate-800 dark:text-white">Backend Admin Panel</CardTitle>
+              <CardDescription className="text-base text-slate-600 dark:text-gray-300">
+                This is where you manage everything - add products, process orders, view sales reports, and control your store.
               </CardDescription>
             </CardHeader>
             
@@ -133,12 +133,12 @@ export default function Demo() {
                 
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button variant="outline" size="lg" className="border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 dark:text-white">
+                    <Button variant="outline" size="lg" className="border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:text-white dark:hover:bg-slate-800">
                       <Play className="w-4 h-4 mr-2" />
                       Watch Tour
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="sm:max-w-2xl bg-white dark:bg-slate-900">
+                  <DialogContent className="sm:max-w-2xl bg-slate-50 dark:bg-slate-900">
                     <DialogHeader>
                       <DialogTitle className="text-gray-900 dark:text-white">Admin Panel Tour</DialogTitle>
                       <DialogDescription className="text-gray-600 dark:text-gray-400">

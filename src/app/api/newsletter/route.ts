@@ -1,4 +1,3 @@
-import { db, newsletter } from "@/db";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
@@ -10,10 +9,26 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Email is required" }, { status: 400 });
     }
 
-    await db.insert(newsletter).values({ email }).onConflictDoNothing();
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json({ error: "Invalid email format" }, { status: 400 });
+    }
 
-    return NextResponse.json({ success: true, message: "Subscribed successfully!" });
-  } catch (error) {
+    // Log the newsletter subscription (in production, you could:
+    // 1. Add to Mailchimp, ConvertKit, etc.
+    // 2. Send to a webhook
+    // 3. Store in a third-party service
+    console.log("📬 Newsletter Subscription:", {
+      email,
+      timestamp: new Date().toISOString(),
+    });
+
+    return NextResponse.json({ 
+      success: true, 
+      message: "Subscribed successfully! Thank you for joining." 
+    });
+  } catch (_error) {
     return NextResponse.json({ error: "Failed to subscribe" }, { status: 500 });
   }
 }
