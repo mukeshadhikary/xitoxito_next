@@ -2,10 +2,10 @@
  * ============================================
  * XITO E-COMMERCE SITE CONFIGURATION
  * ============================================
- * 
+ *
  * This is the global configuration file for the entire website.
  * Customize all aspects of your site from this single file.
- * 
+ *
  * When selling/deploying this site for a client:
  * 1. Update this config with client's branding
  * 2. Replace images in /public folder
@@ -18,8 +18,9 @@ export const siteConfig = {
   // ============================================
   name: "XitoXito",
   tagline: "E-Commerce Software Solution",
-  description: "We build and sell complete e-commerce solutions - both frontend store and backend admin panel. Perfect for businesses who want their own online store without the hassle of development.",
-  
+  description:
+    "We build and sell complete e-commerce solutions - both frontend store and backend admin panel. Perfect for businesses who want their own online store without the hassle of development.",
+
   // Logo configuration
   logo: {
     icon: "ShoppingCart", // Lucide icon name
@@ -34,20 +35,20 @@ export const siteConfig = {
     default: "en",
     supported: ["en", "ne", "ja"],
   },
-  
+
   // Nepali/Hindi translations for display
   translations: {
     hero: {
-      subtitle: "आफ्नै अनलाइन स्टोर किन्नुहोस्",
+      subtitle: "सम्पूर्ण सेटअप हामी गरिदिन्छौं।",
     },
     features: {
-      subtitle: "के के पाउनुहुन्छ",
+      subtitle: "",
     },
     pricing: {
       subtitle: "मूल्य सूची",
     },
     contact: {
-      subtitle: "अहिले नै किन्नुहोस्",
+      subtitle: "हामीलाई सम्पर्क गर्नुहोस् ",
     },
     demo: {
       subtitle: "हेर्नुहोस् के किन्दै हुनुहुन्छ",
@@ -60,7 +61,7 @@ export const siteConfig = {
   theme: {
     defaultTheme: "system" as "light" | "dark" | "system",
     enableThemeToggle: true,
-    
+
     // Brand colors (used in gradients and accents)
     colors: {
       primary: {
@@ -82,9 +83,11 @@ export const siteConfig = {
   // SEO & META
   // ============================================
   seo: {
-    title: "XitoXito | Buy Your Own E-Commerce Store - Complete Online Store Solution",
+    title:
+      "XitoXito | Buy Your Own E-Commerce Store - Complete Online Store Solution",
     titleTemplate: "%s | XitoXito",
-    description: "Get your own complete e-commerce store with frontend website and backend admin panel. We sell ready-to-use online store software for businesses. No coding needed!",
+    description:
+      "Get your own complete e-commerce store with frontend website and backend admin panel. We sell ready-to-use online store software for businesses. No coding needed!",
     keywords: [
       "ecommerce",
       "online store",
@@ -149,13 +152,13 @@ export const siteConfig = {
   // ============================================
   navigation: {
     items: [
-      { label: "What You Get", sectionId: "features" },
-      { label: "Why Us", sectionId: "benefits" },
-      { label: "Pricing", sectionId: "pricing" },
+      // { label: "What You Get", sectionId: "features" },
+      // { label: "Why Us", sectionId: "benefits" },
+      // { label: "Pricing", sectionId: "pricing" },
       { label: "Demo", sectionId: "demo" },
     ],
     cta: {
-      label: "Buy Now",
+      label: "Contact Now",
       sectionId: "contact",
     },
   },
@@ -165,19 +168,20 @@ export const siteConfig = {
   // ============================================
   hero: {
     title: {
-      line1: "Get Your Own",
-      line2: "E-Commerce Store",
-      line3: "Ready to Sell",
+      line1: "आफ्नो पसल",
+      line2: "Online मा लैजानुहोस ",
+      line3: "Application Ready! for You",
     },
-    description: "We sell complete e-commerce solutions - your own online store with a beautiful frontend website and powerful backend admin panel. No development needed, just buy and start selling!",
-    
+    description:
+      "तपाईंको इच्छा अनुसार ब्रान्ड डिजाइनमा आवश्यक परिमार्जनहरू गरिन्छ।",
+
     // Stats displayed in hero
     stats: [
       { value: "50+", label: "Stores Sold" },
       { value: "100%", label: "Owned by You" },
       { value: "24/7", label: "Support" },
     ],
-    
+
     // CTA buttons
     primaryCta: {
       label: "Get Your Store",
@@ -188,13 +192,13 @@ export const siteConfig = {
       href: "https://xito.xitoxito.com",
       external: true,
     },
-    
+
     // Feature highlights in hero card
     highlights: [
-      "Complete frontend store",
-      "Admin panel included",
-      "Full ownership - it's yours",
-      "No monthly fees",
+      "फेसबुकजस्तै प्रयोग गर्न सजिलो",
+      "Admin प्यानल समावेश",
+      "अर्डर व्यवस्थापन प्रणाली",
+      "धेरै सस्तो & Negotiable (मोलमोलाइ गर्न सकिने)",
     ],
   },
 
@@ -202,9 +206,10 @@ export const siteConfig = {
   // FEATURES SECTION
   // ============================================
   features: {
-    title: "What You Get",
-    subtitle: "Complete e-commerce software package - frontend store + backend admin",
-    
+    title: "सेवा सुविधाहरू के के पाउनुहुन्छ",
+    subtitle:
+      "एउटा पूर्ण ई-कमर्स समाधान - अनलाइन पसल (Frontend Store) र यसलाई चलाउने एडमिन सिस्टम (Backend Admin)",
+
     // Feature categories for tabs
     categories: [
       { id: "all", label: "All Features" },
@@ -212,47 +217,53 @@ export const siteConfig = {
       { id: "payments", label: "Payments" },
       { id: "analytics", label: "Analytics" },
     ],
-    
+
     items: [
       {
         icon: "Store",
         title: "Easy Store Setup",
-        description: "Create your online store in minutes with our intuitive setup wizard. No technical skills required.",
+        description:
+          "Create your online store in minutes with our intuitive setup wizard. No technical skills required.",
         color: "from-blue-500 to-blue-600",
         category: "store",
       },
       {
         icon: "Smartphone",
         title: "Mobile Optimized",
-        description: "Your store looks perfect on every device. Responsive design ensures great shopping experience.",
+        description:
+          "Your store looks perfect on every device. Responsive design ensures great shopping experience.",
         color: "from-green-500 to-green-600",
         category: "store",
       },
       {
         icon: "CreditCard",
         title: "Secure Payments",
-        description: "Accept payments via multiple gateways including eSewa, Khalti, and international cards.",
+        description:
+          "Accept payments via multiple gateways including eSewa, Khalti, and international cards.",
         color: "from-purple-500 to-purple-600",
         category: "payments",
       },
       {
         icon: "BarChart3",
         title: "Sales Analytics",
-        description: "Track your sales, understand customer behavior, and grow your business with insights.",
+        description:
+          "Track your sales, understand customer behavior, and grow your business with insights.",
         color: "from-orange-500 to-orange-600",
         category: "analytics",
       },
       {
         icon: "Package",
         title: "Inventory Management",
-        description: "Keep track of stock levels, get low stock alerts, and manage product variants easily.",
+        description:
+          "Keep track of stock levels, get low stock alerts, and manage product variants easily.",
         color: "from-cyan-500 to-cyan-600",
         category: "store",
       },
       {
         icon: "Truck",
         title: "Shipping Integration",
-        description: "Integrate with local courier services for seamless order fulfillment and tracking.",
+        description:
+          "Integrate with local courier services for seamless order fulfillment and tracking.",
         color: "from-pink-500 to-pink-600",
         category: "store",
       },
@@ -263,9 +274,9 @@ export const siteConfig = {
   // BENEFITS SECTION
   // ============================================
   benefits: {
-    title: "Why Buy From Us",
+    title: "Why  Us",
     subtitle: "Get your own e-commerce store, fully owned by you",
-    
+
     items: [
       {
         icon: "Zap",
@@ -292,27 +303,30 @@ export const siteConfig = {
         color: "from-purple-500 to-pink-500",
       },
     ],
-    
+
     // Testimonials
     testimonials: [
       {
         name: "राजेश श्रेष्ठ",
         role: "Founder, KTM Vintage",
-        content: "Xito helped us launch our secondhand clothing store online. The setup was incredibly easy and our sales increased by 300% in 3 months!",
+        content:
+          "Xito helped us launch our secondhand clothing store online. The setup was incredibly easy and our sales increased by 300% in 3 months!",
         avatar: "/avatars/rajesh.jpg",
         rating: 5,
       },
       {
         name: "Yuki Tanaka",
         role: "Owner, Nepal Goods Tokyo",
-        content: "Perfect solution for our Nepal-Japan import business. The multi-currency support and bilingual interface made everything seamless.",
+        content:
+          "Perfect solution for our Nepal-Japan import business. The multi-currency support and bilingual interface made everything seamless.",
         avatar: "/avatars/yuki.jpg",
         rating: 5,
       },
       {
         name: "सुनिता गुरुङ",
         role: "CEO, Himalayan Crafts",
-        content: "From handmade products to nationwide delivery - Xito handles everything. Their support team is always responsive and helpful!",
+        content:
+          "From handmade products to nationwide delivery - Xito handles everything. Their support team is always responsive and helpful!",
         avatar: "/avatars/sunita.jpg",
         rating: 5,
       },
@@ -327,61 +341,12 @@ export const siteConfig = {
     subtitle: "One-time purchase. No monthly fees. 100% yours.",
     currency: "NPR",
     currencySymbol: "रू",
-    
+
     // Billing periods
     billingPeriod: "month",
     annualDiscount: 20, // percentage
-    
-    plans: [
-      {
-        id: "starter",
-        name: "Starter",
-        description: "Perfect for trying out",
-        price: 0,
-        priceLabel: "Free",
-        popular: false,
-        features: [
-          { text: "Up to 10 products", included: true },
-          { text: "Basic analytics", included: true },
-          { text: "Email support", included: true },
-          { text: "Custom domain", included: false },
-          { text: "Priority support", included: false },
-        ],
-        cta: "Start Free",
-      },
-      {
-        id: "professional",
-        name: "Professional",
-        description: "Best for growing businesses",
-        price: 2999,
-        priceLabel: "रू2,999",
-        popular: true,
-        features: [
-          { text: "Unlimited products", included: true },
-          { text: "Advanced analytics", included: true },
-          { text: "Priority support", included: true },
-          { text: "Custom domain", included: true },
-          { text: "Marketing tools", included: true },
-        ],
-        cta: "Get Started",
-      },
-      {
-        id: "enterprise",
-        name: "Enterprise",
-        description: "For large scale operations",
-        price: 9999,
-        priceLabel: "रू9,999",
-        popular: false,
-        features: [
-          { text: "Everything in Pro", included: true },
-          { text: "Dedicated support", included: true },
-          { text: "Custom integrations", included: true },
-          { text: "SLA guarantee", included: true },
-          { text: "White-label option", included: true },
-        ],
-        cta: "Contact Sales",
-      },
-    ],
+
+ 
   },
 
   // ============================================
@@ -389,8 +354,9 @@ export const siteConfig = {
   // ============================================
   demo: {
     title: "See What You're Buying",
-    description: "Try our e-commerce software before you buy - both the store frontend and admin panel",
-    
+    description:
+      "Try our e-commerce software before you buy - both the store frontend and admin panel",
+
     features: [
       "Full product catalog",
       "Shopping cart & checkout",
@@ -399,11 +365,12 @@ export const siteConfig = {
       "Admin dashboard",
       "Mobile responsive",
     ],
-    
+
     cards: [
       {
         title: "Frontend Store Demo",
-        description: "See how your online store will look. This is the customer-facing website where your buyers will shop.",
+        description:
+          "See how your online store will look. This is the customer-facing website where your buyers will shop.",
         icon: "Monitor",
         href: "https://xito.xitoxito.com",
         badge: "Live Store",
@@ -411,7 +378,8 @@ export const siteConfig = {
       },
       {
         title: "Backend Admin Panel",
-        description: "This is where you'll manage your store - add products, process orders, view reports, and more.",
+        description:
+          "This is where you'll manage your store - add products, process orders, view reports, and more.",
         icon: "Settings",
         href: "https://api.xitoxito.com",
         badge: "Admin Panel",
@@ -424,43 +392,73 @@ export const siteConfig = {
   // CONTACT SECTION
   // ============================================
   contactSection: {
-    title: "Ready to Buy?",
+    title: "Ready to Start Your Online Store?",
     subtitle: "Get your own e-commerce store today",
-    description: "Have questions about our e-commerce software? Want to discuss customization? Let's talk!",
-    
+    description:
+      "Have questions about our e-commerce software? Want to discuss customization? Let's talk!",
+
     // Form fields configuration
     form: {
       fields: [
-        { name: "name", label: "Full Name", type: "text", required: true, placeholder: "Your name" },
-        { name: "email", label: "Email", type: "email", required: true, placeholder: "your@email.com" },
-        { name: "phone", label: "Phone", type: "tel", required: false, placeholder: "+977-98XXXXXXXX" },
-        { name: "message", label: "Message", type: "textarea", required: true, placeholder: "Tell us about your business..." },
+        {
+          name: "name",
+          label: "Full Name",
+          type: "text",
+          required: true,
+          placeholder: "Your name",
+        },
+        {
+          name: "email",
+          label: "Email",
+          type: "email",
+          required: true,
+          placeholder: "your@email.com",
+        },
+        {
+          name: "phone",
+          label: "Phone",
+          type: "tel",
+          required: false,
+          placeholder: "+977-98XXXXXXXX",
+        },
+        {
+          name: "message",
+          label: "Message",
+          type: "textarea",
+          required: true,
+          placeholder: "Tell us about your business...",
+        },
       ],
       submitLabel: "Send Message",
       successMessage: "Thank you! We'll get back to you within 24 hours.",
     },
-    
+
     // FAQ items
     faqs: [
       {
         question: "How long does setup take?",
-        answer: "Most stores are up and running within 30 minutes. Our setup wizard guides you through every step.",
+        answer:
+          "Most stores are up and running within 30 minutes. Our setup wizard guides you through every step.",
       },
       {
         question: "Can I use my own domain?",
-        answer: "Yes! You can connect your custom domain on Professional and Enterprise plans.",
+        answer:
+          "Yes! You can connect your custom domain on Professional and Enterprise plans.",
       },
       {
         question: "What payment methods are supported?",
-        answer: "We support eSewa, Khalti, bank transfers, and international cards via Stripe.",
+        answer:
+          "We support eSewa, Khalti, bank transfers, and international cards via Stripe.",
       },
       {
         question: "Is there a transaction fee?",
-        answer: "We charge 0% transaction fees. You only pay the payment gateway fees.",
+        answer:
+          "We charge 0% transaction fees. You only pay the payment gateway fees.",
       },
       {
         question: "Can I migrate from another platform?",
-        answer: "Yes! We offer free migration assistance for Professional and Enterprise plans.",
+        answer:
+          "Yes! We offer free migration assistance for Professional and Enterprise plans.",
       },
     ],
   },
@@ -469,8 +467,9 @@ export const siteConfig = {
   // FOOTER
   // ============================================
   footer: {
-    tagline: "Professional e-commerce solution designed for small businesses in Japan and Nepal. Build your online presence with ease.",
-    
+    tagline:
+      "Professional e-commerce solution designed for small businesses in Japan and Nepal. Build your online presence with ease.",
+
     // Footer link sections
     sections: [
       {
@@ -494,30 +493,26 @@ export const siteConfig = {
       },
       {
         title: "Technology",
-        items: [
-          "Next.js",
-          "Strapi CMS",
-          "PostgreSQL",
-          "Tailwind CSS",
-        ],
+        items: ["Next.js", "Strapi CMS", "PostgreSQL", "Tailwind CSS"],
       },
     ],
-    
+
     // Legal links
     legal: [
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms of Service", href: "/terms" },
       { label: "Cookie Policy", href: "/cookies" },
     ],
-    
+
     // Developer credit
     developer: {
       name: "Mukesh Adhykari",
       url: "www.mukesh.adhykari.com",
     },
-    
+
     copyright: "© {year} {siteName}. All rights reserved.",
-    bottomText: "नेपाल → जापान | Serving Nepali communities in Japan and businesses in Nepal",
+    bottomText:
+      "नेपाल → जापान | Serving Nepali communities in Japan and businesses in Nepal",
   },
 
   // ============================================
@@ -526,10 +521,10 @@ export const siteConfig = {
   mobile: {
     // Disable pinch zoom for native app feel
     disablePinchZoom: true,
-    
+
     // Enable pull-to-refresh behavior
     pullToRefresh: false,
-    
+
     // Viewport settings
     viewport: {
       width: "device-width",
@@ -538,13 +533,13 @@ export const siteConfig = {
       userScalable: false,
       viewportFit: "cover",
     },
-    
+
     // iOS specific
     ios: {
       statusBarStyle: "black-translucent",
       capable: true,
     },
-    
+
     // Android specific
     android: {
       themeColor: "#1e40af",
@@ -577,6 +572,5 @@ export const siteConfig = {
 // Type exports for TypeScript support
 export type SiteConfig = typeof siteConfig;
 export type NavItem = (typeof siteConfig.navigation.items)[number];
-export type PricingPlan = (typeof siteConfig.pricing.plans)[number];
 export type Feature = (typeof siteConfig.features.items)[number];
 export type Testimonial = (typeof siteConfig.benefits.testimonials)[number];

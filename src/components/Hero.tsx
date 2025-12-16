@@ -37,7 +37,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
                   {hero.title.line1} {hero.title.line2}
                 </span>
                 <br />
-                <span className="text-white">{hero.title.line3}</span>
+                <span className="text-purple-700">{hero.title.line3}</span>
               </h1>
               <p className="text-xl text-blue-200">
                 {translations.hero.subtitle}
@@ -51,7 +51,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
               <Button
                 size="lg"
                 onClick={() => onScrollToSection(hero.primaryCta.sectionId)}
-                className="bg-linear-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300 h-14 px-8 text-lg"
+                className="bg-linear-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-foreground shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300 h-14 px-8 text-lg"
               >
                 {hero.primaryCta.label}
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -60,7 +60,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
                 size="lg"
                 variant="outline"
                 onClick={() => onScrollToSection("demo")}
-                className="border-white/30 text-white hover:bg-white/10 h-14 px-8 text-lg"
+                className="border-white/30 text-foreground hover:bg-white/10 h-14 px-8 text-lg"
               >
                 <Play className="mr-2 w-5 h-5" />
                 {hero.secondaryCta.label}
@@ -81,7 +81,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
           </div>
 
           {/* Right content - Feature card */}
-          <div className="hidden lg:block">
+          <div >
             <Card className="bg-white/10 dark:bg-white/5 backdrop-blur-xl border-white/20 shadow-2xl">
               <CardContent className="p-8">
                 <div className="space-y-6">
@@ -109,7 +109,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
                     ))}
                   </div>
 
-                  <div className="pt-4 border-t border-white/10">
+                  {/* <div className="pt-4 border-t border-white/10">
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-blue-200/70">Trusted by {hero.stats[0].value} businesses</span>
                       <div className="flex -space-x-2">
@@ -124,6 +124,10 @@ export default function Hero({ onScrollToSection }: HeroProps) {
                         </div>
                       </div>
                     </div>
+                  </div> */}
+
+                  <div className="h-[60px]">
+
                   </div>
                 </div>
               </CardContent>

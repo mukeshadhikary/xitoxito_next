@@ -24,7 +24,7 @@ export default function Footer({ onScrollToSection }: FooterProps) {
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
       
       {/* Scroll to top button */}
-      <div className="absolute -top-6 left-1/2 -translate-x-1/2">
+      <div className="absolute -top-6 left-1/2 -translate-x-1/2 mt-10">
         <Button
           onClick={scrollToTop}
           size="icon"
@@ -138,7 +138,7 @@ export default function Footer({ onScrollToSection }: FooterProps) {
               </Button>
               <Button
                 variant="outline"
-                className="border-white/20 text-white hover:bg-white/10 hover:text-white"
+                className="border-white/20 text-foreground hover:bg-white/10 hover:text-white"
                 asChild
               >
                 <a href={links.demoStore} target="_blank" rel="noopener noreferrer">

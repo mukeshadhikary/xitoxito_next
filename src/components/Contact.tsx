@@ -317,11 +317,7 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Bottom text */}
-        <div className="mt-12 text-center">
-          <p className="text-blue-200">Available in both English and Nepali</p>
-          <p className="text-sm text-blue-300/70">अंग्रेजी र नेपाली दुवैमा उपलब्ध</p>
-        </div>
+    
       </div>
     </section>
   );

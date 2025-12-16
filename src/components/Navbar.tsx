@@ -66,7 +66,7 @@ export default function Navbar({ onScrollToSection }: NavbarProps) {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className=" flex items-center space-x-1">
             <NavigationMenu>
               <NavigationMenuList>
                 {siteConfig.navigation.items.map((item) => (
@@ -98,7 +98,7 @@ export default function Navbar({ onScrollToSection }: NavbarProps) {
           </div>
 
           {/* Mobile Navigation */}
-          <div className="flex items-center gap-2 md:hidden">
+          {/* <div className="flex items-center gap-2 md:hidden">
             <ThemeToggle />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
@@ -133,7 +133,7 @@ export default function Navbar({ onScrollToSection }: NavbarProps) {
                 </div>
               </SheetContent>
             </Sheet>
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>

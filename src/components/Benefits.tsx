@@ -49,13 +49,13 @@ const BENEFITS = [
     icon: Store,
     title: "For Secondhand Stores in Japan",
     titleNp: "जापानमा सेकेन्डह्यान्ड स्टोरहरूका लागि",
-    description: "Sell furniture, electronics, and household items to both Japanese and Nepali communities",
+    description: "Sell clothes, electronics, furniture, and more to Nepali and Japanese customers",
     color: "from-orange-500 to-red-500",
   },
   {
     icon: Package,
-    title: "For Small Brands in Nepal",
-    titleNp: "नेपालमा साना ब्रान्डहरूका लागि",
+    title: "For Business And Local Brands in Nepal",
+    titleNp: "नेपालका व्यवसाय र स्थानीय ब्रान्डहरूका लागि",
     description: "Reach customers across Nepal with handicrafts, clothing, food products, and more",
     color: "from-purple-500 to-pink-500",
   },
@@ -70,7 +70,7 @@ const BENEFITS = [
     icon: Wallet,
     title: "Cost Effective",
     titleNp: "किफायती मूल्य",
-    description: "One-time setup fee, no monthly subscription - affordable for small businesses",
+    description: "affordable for small businesses",
     color: "from-green-500 to-emerald-500",
   },
 ];
@@ -101,22 +101,19 @@ export default function Benefits() {
   }, [api]);
 
   return (
-    <section id="benefits" className="py-24 bg-slate-50 dark:bg-slate-950 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   <section id="benefits" className="py-24 bg-slate-50 dark:bg-slate-950">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <Badge variant="outline" className="mb-4 border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900">
-            Why {siteConfig.name}?
-          </Badge>
+        
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             <span className="text-slate-800 dark:text-white">
               {siteConfig.benefits.title}
             </span>
           </h2>
-          <p className="text-lg sm:text-xl text-slate-600 dark:text-gray-400">किन {siteConfig.name} छान्नुहोस्?</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <div className="md:grid lg:grid-cols-2 gap-8 lg:gap-12 items-start ">
           {/* Benefits Cards */}
           <div className="space-y-4 sm:space-y-6">
             <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-slate-800 dark:text-white">Perfect for Your Business</h3>
@@ -125,7 +122,7 @@ export default function Benefits() {
               return (
                 <Card
                   key={index}
-                  className="group overflow-hidden border border-slate-200/60 shadow-md hover:shadow-xl transition-all duration-300 bg-white dark:bg-slate-900 dark:border-slate-800"
+                  className="group overflow-hidden w-fu border border-slate-200/60 shadow-md hover:shadow-xl transition-all duration-300 bg-background dark:bg-slate-900 dark:border-slate-800"
                 >
                   <CardContent className="p-4 sm:p-6 flex items-start gap-3 sm:gap-4">
                     <div

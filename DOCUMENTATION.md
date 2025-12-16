@@ -110,7 +110,7 @@ marketos/
 │   │   └── site.config.ts        # ⭐ MAIN CONFIG FILE
 │   │
 │   ├── 📁 data/                  # Static data
-│   │   └── constants.tsx         # Features, pricing, etc.
+│   │   └── constants.tsx         # Features, pricing, etc. 
 │   │
 │   ├── 📁 lib/                   # Utility functions
 │   │   ├── seo.ts                # SEO helpers
