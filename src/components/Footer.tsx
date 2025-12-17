@@ -4,7 +4,7 @@ import { ShoppingCart, Heart, ArrowUp, ExternalLink, MapPin, Globe } from "lucid
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { siteConfig } from "@/config/site.config";
-
+import Link from "next/link";
 interface FooterProps {
   onScrollToSection: (sectionId: string) => void;
 }
@@ -168,12 +168,12 @@ export default function Footer({ onScrollToSection }: FooterProps) {
             <span>Developed with</span>
             <Heart className="w-4 h-4 text-red-500 animate-pulse" />
             <span>by</span>
-            <a 
+            <Link 
               href={footer.developer.url} 
               className="text-blue-400 hover:text-blue-300 transition-colors font-medium"
             >
               {footer.developer.name}
-            </a>
+            </Link>
           </div>
         </div>
 

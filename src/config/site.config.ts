@@ -507,7 +507,7 @@ export const siteConfig = {
     // Developer credit
     developer: {
       name: "Mukesh Adhykari",
-      url: "www.mukesh.adhykari.com",
+      url: "http://mukesh.adhykari.com/",
     },
 
     copyright: "© {year} {siteName}. All rights reserved.",
