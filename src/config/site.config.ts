@@ -141,7 +141,7 @@ export const siteConfig = {
   // EXTERNAL LINKS
   // ============================================
   links: {
-    demoStore: "https://xito.xitoxito.com",
+    demoStore: "https://demo.xitoxito.com",
     adminPanel: "https://api.xitoxito.com",
     documentation: "https://docs.xitoxito.com",
     support: "https://support.xitoxito.com",

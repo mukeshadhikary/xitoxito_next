@@ -1,9 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ShoppingCart, Menu, ChevronRight } from "lucide-react";
+import {  ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -14,7 +13,7 @@ import {
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { siteConfig } from "@/config/site.config";
 import { cn } from "@/lib/utils";
-
+import Image from "next/image";
 interface NavbarProps {
   onScrollToSection: (sectionId: string) => void;
 }
@@ -52,7 +51,13 @@ export default function Navbar({ onScrollToSection }: NavbarProps) {
             <div className="relative">
               <div className="absolute -inset-1 bg-linear-to-r from-blue-600 to-cyan-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-300" />
               <div className="relative bg-background rounded-lg p-1.5 sm:p-2">
-                <ShoppingCart className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-400" />
+                <Image
+                  src="/logo.png"
+                  alt={`${siteConfig.name} Logo`}
+                  width={32}
+                  height={32}
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-sm"
+                />
               </div>
             </div>
             <div className="flex flex-col">
