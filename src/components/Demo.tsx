@@ -1,11 +1,38 @@
 "use client";
 
-import { CheckCircle, ArrowRight, ExternalLink, Monitor, Settings, Play, Sparkles, Lock, Mail, Key, Copy, Check } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  CheckCircle,
+  ArrowRight,
+  ExternalLink,
+  Monitor,
+  Settings,
+  Play,
+  Sparkles,
+  Lock,
+  Key,
+  Copy,
+  Check,
+} from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Demo() {
   const [copiedField, setCopiedField] = useState<null | unknown>(null);
@@ -18,7 +45,7 @@ export default function Demo() {
 
   const adminCredentials = {
     email: "admin@admin.com",
-    password: "admin@pass124"
+    password: "admin@pass124",
   };
 
   const [adminImagesOpen, setAdminImagesOpen] = useState(false);
@@ -36,22 +63,34 @@ export default function Demo() {
     "Real-time Analytics",
     "Inventory Tracking",
     "Customer Management",
-    "Payment Integration"
+    "Payment Integration",
   ];
 
   return (
-    <section id="demo" className="py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20 dark:from-slate-950 dark:via-blue-950/20 dark:to-purple-950/10 relative overflow-hidden">
+    <section
+      id="demo"
+      className="py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20 dark:from-slate-950 dark:via-blue-950/20 dark:to-purple-950/10 relative overflow-hidden"
+    >
       {/* Animated background elements */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-40 dark:opacity-20" />
 
       <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 dark:from-blue-500/10 dark:to-cyan-500/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-purple-400/20 to-pink-400/20 dark:from-purple-500/10 dark:to-pink-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-indigo-400/10 to-blue-400/10 dark:from-indigo-500/5 dark:to-blue-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+      <div
+        className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-purple-400/20 to-pink-400/20 dark:from-purple-500/10 dark:to-pink-500/10 rounded-full blur-3xl animate-pulse"
+        style={{ animationDelay: "1s" }}
+      />
+      <div
+        className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-indigo-400/10 to-blue-400/10 dark:from-indigo-500/5 dark:to-blue-500/5 rounded-full blur-3xl animate-pulse"
+        style={{ animationDelay: "2s" }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header with enhanced styling */}
         <div className="text-center mb-16 sm:mb-20">
-          <Badge variant="outline" className="mb-6 px-5 py-2 text-sm font-semibold bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-blue-200 dark:border-blue-800 shadow-lg">
+          <Badge
+            variant="outline"
+            className="mb-6 px-5 py-2 text-sm font-semibold bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-blue-200 dark:border-blue-800 shadow-lg"
+          >
             <Play className="w-4 h-4 mr-2 text-blue-600 dark:text-blue-400" />
             Try It Live - No Signup Required
           </Badge>
@@ -88,21 +127,26 @@ export default function Demo() {
                 Customer Store
               </CardTitle>
               <CardDescription className="text-base text-slate-600 dark:text-gray-300 leading-relaxed">
-                Experience the shopping journey your customers will have. Browse products, add to cart, and complete checkout.
+                Experience the shopping journey your customers will have. Browse
+                products, add to cart, and complete checkout.
               </CardDescription>
             </CardHeader>
 
             <CardContent className="pt-0 relative z-10">
               <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-xl p-4 mb-5 border border-slate-200 dark:border-slate-700">
                 <div className="flex items-center justify-between text-sm mb-2">
-                  <span className="text-slate-600 dark:text-gray-400 font-medium">Demo URL:</span>
+                  <span className="text-slate-600 dark:text-gray-400 font-medium">
+                    Demo URL:
+                  </span>
                   <Button
                     variant="ghost"
                     size="sm"
-                    onClick={() => copyToClipboard('demo.xitoxito.com', 'frontend')}
+                    onClick={() =>
+                      copyToClipboard("demo.xitoxito.com", "frontend")
+                    }
                     className="h-7 px-2"
                   >
-                    {copiedField === 'frontend' ? (
+                    {copiedField === "frontend" ? (
                       <Check className="w-3.5 h-3.5 text-green-600" />
                     ) : (
                       <Copy className="w-3.5 h-3.5" />
@@ -119,7 +163,11 @@ export default function Demo() {
                 size="lg"
                 className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-600 hover:from-blue-700 hover:via-blue-800 hover:to-cyan-700 shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 text-base font-semibold group/btn"
               >
-                <a href="https://demo.xitoxito.com" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://demo.xitoxito.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <ExternalLink className="w-5 h-5 mr-2 group-hover/btn:rotate-12 transition-transform" />
                   Visit Customer Store
                   <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
@@ -147,8 +195,13 @@ export default function Demo() {
                 Admin Dashboard
               </CardTitle>
               <CardDescription className="text-base text-slate-600 dark:text-gray-300 leading-relaxed">
-                Manage your entire store. Add products, view analytics, and control everything from one place.<br />
-                <span className="text-xs text-red-500 font-semibold block mt-2">For security reasons, for admin panel credentials Please contact us.</span>
+                Manage your entire store. Add products, view analytics, and
+                control everything from one place.
+                <br />
+                <span className="text-xs text-red-500 font-semibold block mt-2">
+                  For security reasons, for admin panel credentials Please
+                  contact us.
+                </span>
               </CardDescription>
             </CardHeader>
 
@@ -156,7 +209,9 @@ export default function Demo() {
               <div className="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 backdrop-blur-sm rounded-xl p-5 mb-5 border-2 border-purple-200 dark:border-purple-800">
                 <div className="flex items-center gap-2 mb-4">
                   <Key className="w-4 h-4 text-purple-600 dark:text-purple-400" />
-                  <span className="text-sm font-bold text-purple-900 dark:text-purple-100">Login Credentials</span>
+                  <span className="text-sm font-bold text-purple-900 dark:text-purple-100">
+                    Login Credentials
+                  </span>
                 </div>
 
                 {/* <div className="space-y-3">
@@ -220,15 +275,18 @@ export default function Demo() {
                 size="lg"
                 className="w-full bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 hover:from-purple-700 hover:via-indigo-700 hover:to-purple-800 shadow-xl shadow-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/40 transition-all duration-300 text-base font-semibold group/btn"
               >
-                <a href="/contact" target="_blank" rel="noopener noreferrer">
+                <Link href="/" target="_blank" rel="noopener noreferrer">
                   <Settings className="w-5 h-5 mr-2 group-hover/btn:rotate-90 transition-transform duration-300" />
                   Contact Us for View Admin Panel
                   <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </Button>
               {/* Add button to show admin images */}
               <div className="mt-4 flex justify-center">
-                <Dialog open={adminImagesOpen} onOpenChange={setAdminImagesOpen}>
+                <Dialog
+                  open={adminImagesOpen}
+                  onOpenChange={setAdminImagesOpen}
+                >
                   <DialogTrigger asChild>
                     <Button
                       variant="outline"
@@ -241,12 +299,15 @@ export default function Demo() {
                     <DialogHeader>
                       <DialogTitle>Admin Management UI Preview</DialogTitle>
                       <DialogDescription>
-                        For security reasons, direct access is restricted. Here are preview images of the admin management UI.
+                        For security reasons, direct access is restricted. Here
+                        are preview images of the admin management UI.
                       </DialogDescription>
                     </DialogHeader>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                       {adminImages.map((src, idx) => (
-                        <img
+                        <Image
+                          width={600}
+                          height={400}
                           key={src}
                           src={src}
                           alt={`Admin UI ${idx + 1}`}
@@ -292,7 +353,9 @@ export default function Demo() {
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center shrink-0 shadow-lg">
                     <CheckCircle className="w-5 h-5 text-white" />
                   </div>
-                  <span className="text-white font-semibold text-sm">{feature}</span>
+                  <span className="text-white font-semibold text-sm">
+                    {feature}
+                  </span>
                 </div>
               ))}
             </div>
@@ -300,8 +363,12 @@ export default function Demo() {
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
                 <div className="text-center sm:text-left">
-                  <h3 className="text-xl font-bold text-white mb-2">Ready to explore?</h3>
-                  <p className="text-blue-100">Try both interfaces and see the power of our platform</p>
+                  <h3 className="text-xl font-bold text-white mb-2">
+                    Ready to explore?
+                  </h3>
+                  <p className="text-blue-100">
+                    Try both interfaces and see the power of our platform
+                  </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button
@@ -309,7 +376,11 @@ export default function Demo() {
                     size="lg"
                     className="bg-white text-blue-700 hover:bg-blue-50 shadow-xl hover:shadow-2xl transition-all duration-300 font-semibold"
                   >
-                    <a href="https://demo.xitoxito.com" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://demo.xitoxito.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Monitor className="w-5 h-5 mr-2" />
                       Customer View
                     </a>
@@ -320,7 +391,11 @@ export default function Demo() {
                     variant="outline"
                     className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-700 shadow-xl hover:shadow-2xl transition-all duration-300 font-semibold"
                   >
-                    <a href="https://admin.xitoxito.com" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://admin.xitoxito.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Settings className="w-5 h-5 mr-2" />
                       Admin Panel
                     </a>
