@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import {  ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -72,7 +72,7 @@ export default function Navbar({ onScrollToSection }: NavbarProps) {
 
           {/* Desktop Navigation */}
           <div className=" flex items-center space-x-1">
-            <NavigationMenu>
+            <NavigationMenu className="hidden md:flex">
               <NavigationMenuList>
                 {siteConfig.navigation.items.map((item) => (
                   <NavigationMenuItem key={item.sectionId}>
@@ -89,10 +89,10 @@ export default function Navbar({ onScrollToSection }: NavbarProps) {
                 ))}
               </NavigationMenuList>
             </NavigationMenu>
-            
+
             {/* Theme Toggle */}
             <ThemeToggle />
-            
+
             <Button
               onClick={() => handleNavClick(siteConfig.navigation.cta.sectionId)}
               className="ml-2 bg-linear-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300"

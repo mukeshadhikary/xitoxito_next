@@ -4,12 +4,11 @@ import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/config/site.config";
-import { 
-  generateHomePageSchemas, 
-  generateFAQSchema, 
+import {
+  generateHomePageSchemas,
+  generateFAQSchema,
   defaultFAQs,
   SITE_URL,
-  getCanonicalUrl 
 } from "@/lib/seo";
 import "./globals.css";
 
@@ -29,10 +28,16 @@ export const viewport: Viewport = {
   initialScale: siteConfig.mobile.viewport.initialScale,
   maximumScale: siteConfig.mobile.viewport.maximumScale,
   userScalable: siteConfig.mobile.viewport.userScalable,
-  viewportFit: siteConfig.mobile.viewport.viewportFit as "auto" | "cover" | "contain",
+  viewportFit: siteConfig.mobile.viewport.viewportFit as
+    | "auto"
+    | "cover"
+    | "contain",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: siteConfig.mobile.android.themeColor },
+    {
+      media: "(prefers-color-scheme: dark)",
+      color: siteConfig.mobile.android.themeColor,
+    },
   ],
 };
 
@@ -44,20 +49,25 @@ export const metadata: Metadata = {
   },
   description: siteConfig.seo.description,
   keywords: [...siteConfig.seo.keywords],
-  authors: [{ name: siteConfig.footer.developer.name, url: siteConfig.footer.developer.url }],
+  authors: [
+    {
+      name: siteConfig.footer.developer.name,
+      url: siteConfig.footer.developer.url,
+    },
+  ],
   creator: siteConfig.footer.developer.name,
   publisher: siteConfig.name,
-  
+
   // Canonical URL
   metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: "/",
     languages: {
-      "en": "/",
-      "ne": "/ne",
+      en: "/",
+      ne: "/ne",
     },
   },
-  
+
   // Robots
   robots: {
     index: true,
@@ -71,14 +81,17 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  
+
   // PWA / Mobile optimizations
   appleWebApp: {
     capable: siteConfig.mobile.ios.capable,
-    statusBarStyle: siteConfig.mobile.ios.statusBarStyle as "default" | "black" | "black-translucent",
+    statusBarStyle: siteConfig.mobile.ios.statusBarStyle as
+      | "default"
+      | "black"
+      | "black-translucent",
     title: siteConfig.name,
   },
-  
+
   // Prevent phone number detection
   formatDetection: {
     telephone: false,
@@ -86,7 +99,7 @@ export const metadata: Metadata = {
     email: false,
     address: false,
   },
-  
+
   // Open Graph
   openGraph: {
     type: "website",
@@ -105,7 +118,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  
+
   // Twitter
   twitter: {
     card: "summary_large_image",
@@ -115,14 +128,14 @@ export const metadata: Metadata = {
     site: siteConfig.seo.twitter.creator,
     images: [`${SITE_URL}/og-image.png`],
   },
-  
+
   // Verification (add your actual verification codes)
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || "",
     yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || "",
     // bing: process.env.NEXT_PUBLIC_BING_VERIFICATION || "",
   },
-  
+
   // Icons
   icons: {
     icon: [
@@ -131,22 +144,30 @@ export const metadata: Metadata = {
       { url: "/icons/icon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
     apple: [
-      { url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      {
+        url: "/icons/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
     ],
     other: [
-      { rel: "mask-icon", url: "/icons/safari-pinned-tab.svg", color: "#3b82f6" },
+      {
+        rel: "mask-icon",
+        url: "/icons/safari-pinned-tab.svg",
+        color: "#3b82f6",
+      },
     ],
   },
-  
+
   // Category
   category: "technology",
-  
+
   // Additional meta
   other: {
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-capable": "yes",
-    "HandheldFriendly": "true",
-    "MobileOptimized": "width",
+    HandheldFriendly: "true",
+    MobileOptimized: "width",
     "msapplication-TileColor": "#3b82f6",
     "msapplication-config": "/browserconfig.xml",
   },

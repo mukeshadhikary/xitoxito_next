@@ -346,7 +346,7 @@ export const siteConfig = {
     billingPeriod: "month",
     annualDiscount: 20, // percentage
 
- 
+
   },
 
   // ============================================
@@ -554,6 +554,31 @@ export const siteConfig = {
     facebookPixelId: "",
     hotjarId: "",
   },
+
+  // from Emails===============================
+  fromEmails: {
+    support: "support@xitoxito.com",
+    noReply: "no-reply@xitoxito.com",
+    publicContact: "from_user_contact@xitoxito.com",
+  },
+  toemails: {
+    contactForm: "contact@xitoxito.com",
+  },
+  // ============================================
+
+
+
+
+  // date configuration ================================
+  currentDate: new Date().toLocaleDateString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "Asia/Tokyo",
+  }),
 
   // ============================================
   // FEATURE FLAGS

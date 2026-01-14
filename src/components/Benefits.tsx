@@ -20,7 +20,7 @@ const TESTIMONIALS = [
     business: "Secondhand Store, Tokyo",
     businessNp: "सेकेन्डह्यान्ड स्टोर, टोकियो",
     text: "After using Xito system, my sales increased 3x! Now Japanese and Nepali customers can easily order online.",
-    textNp: "Xito प्रणाली प्रयोग गरेपछि मेरो बिक्री ३ गुणा बढ्यो!",
+    textNp: "E-commerce प्रणाली प्रयोग गरेपछि मेरो बिक्री ३ गुणा !",
     rating: 5,
     initials: "RT",
   },
@@ -29,7 +29,7 @@ const TESTIMONIALS = [
     business: "Handicraft Brand, Pokhara",
     businessNp: "हस्तकला ब्रान्ड, पोखरा",
     text: "Very easy to manage products! I can update my shop from my phone anytime.",
-    textNp: "उत्पादनहरू व्यवस्थापन गर्न धेरै सजिलो!",
+    textNp: "Products व्यवस्थापन गर्न धेरै सजिलो!",
     rating: 5,
     initials: "SG",
   },
@@ -101,11 +101,11 @@ export default function Benefits() {
   }, [api]);
 
   return (
-   <section id="benefits" className="py-24 bg-slate-50 dark:bg-slate-950">
+    <section id="benefits" className="py-24 bg-slate-50 dark:bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-        
+
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             <span className="text-slate-800 dark:text-white">
               {siteConfig.benefits.title}
@@ -142,7 +142,7 @@ export default function Benefits() {
           </div>
 
           {/* Testimonials Carousel */}
-          <div className="relative mt-8 lg:mt-0">
+          <div className="relative mt-8 lg:mt-0 disabled">
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-slate-400/20 dark:bg-blue-500/10 rounded-full blur-2xl" />
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-slate-300/30 dark:bg-cyan-500/10 rounded-full blur-2xl" />
 
@@ -150,7 +150,7 @@ export default function Benefits() {
               <CardContent className="p-4 sm:p-6 lg:p-8">
                 <div className="flex items-center gap-2 mb-4 sm:mb-6">
                   <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-slate-600 dark:text-blue-400" />
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white">Success Stories</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white">Key Features</h3>
                 </div>
 
                 <Carousel setApi={setApi} className="w-full" opts={{ loop: true }}>
@@ -177,7 +177,7 @@ export default function Benefits() {
                           </p>
 
                           {/* Author */}
-                          <div className="flex items-center gap-3 sm:gap-4 pt-4 border-t border-slate-200 dark:border-white/10">
+                          <div className="flex items-center gap-3 sm:gap-4 pt-4 border-t border-slate-200 dark:border-white/10 hidden">
                             <Avatar className="w-10 h-10 sm:w-12 sm:h-12 border-2 border-slate-300 dark:border-blue-400">
                               <AvatarFallback className="bg-linear-to-br from-slate-600 to-slate-700 dark:from-blue-500 dark:to-cyan-500 text-white font-bold text-sm sm:text-base">
                                 {testimonial.initials}
@@ -202,11 +202,10 @@ export default function Benefits() {
                         <button
                           key={index}
                           onClick={() => api?.scrollTo(index)}
-                          className={`w-2 h-2 rounded-full transition-all ${
-                            index === current
-                              ? "bg-slate-600 dark:bg-blue-400 w-6"
-                              : "bg-slate-300 hover:bg-slate-400 dark:bg-white/30 dark:hover:bg-white/50"
-                          }`}
+                          className={`w-2 h-2 rounded-full transition-all ${index === current
+                            ? "bg-slate-600 dark:bg-blue-400 w-6"
+                            : "bg-slate-300 hover:bg-slate-400 dark:bg-white/30 dark:hover:bg-white/50"
+                            }`}
                         />
                       ))}
                     </div>
